@@ -1,0 +1,45 @@
+{% extends "root.html" %} {% block title %} {{ context['title'] }} {% endblock
+%} {% block content %}
+<div class="row">
+  <h4>Edit data {{ context['data'][1] }}</h4>
+  <form action="" method="POST" class="col-md-4">
+    <hr />
+    <input
+      value="{{ context['data'][1] }}"
+      class="form-control mt-3"
+      name="nama"
+      placeholder="Nama Lengkap"
+    />
+    <input
+      value="{{ context['data'][2] }}"
+      class="form-control mt-3"
+      name="alamat"
+      placeholder="Alamat"
+    />
+    <select class="form-control mt-3" name="kelamin">
+      <option selected value="tidak diketahui">Jenis Kelamin</option>
+      <option value="laki-laki">laki-laki</option>
+      <option value="perempuan">perempuan</option>
+    </select>
+    <input
+      value="{{ context['data'][4] }}"
+      class="form-control mt-3"
+      name="agama"
+      placeholder="Agama"
+    />
+    <input
+      value="{{ context['data'][5] }}"
+      class="form-control mt-3"
+      name="sekolah"
+      placeholder="Sekolah Asal"
+    />
+    <input
+      type="text"
+      name="siswa_id"
+      value="{{context['id']}}"
+      style="display: none"
+    />
+    <button type="submit" class="btn btn-primary mt-4">Simpan</button>
+  </form>
+</div>
+{% endblock %}

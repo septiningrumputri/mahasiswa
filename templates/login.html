@@ -1,0 +1,34 @@
+{% extends "root.html" %} {% block title %} {{ context['title'] }} {% endblock
+%} {% block content %}
+<div class="row justify-content-center">
+  <form class="col-md-3" action="" method="POST">
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for
+    message in messages %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Gagal</strong> {{message}}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    {% endfor %} {% endif %} {% endwith %}
+    <h4>Login</h4>
+
+    <input
+      type="text"
+      class="form-control mt-5"
+      placeholder="Masukan username"
+      name="username"
+    />
+    <input
+      type="password"
+      class="form-control mt-3"
+      placeholder="Masukan password"
+      name="password"
+    />
+    <button type="submit" class="btn btn-primary btn-block mt-3">Login</button>
+  </form>
+</div>
+{% endblock %}

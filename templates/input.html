@@ -1,0 +1,23 @@
+{% extends "root.html" %} {% block title %} {{ context['title'] }} {% endblock
+%} {% block content %}
+<div class="row">
+  <h4>Buat data baru</h4>
+  <form action="" method="POST" class="col-md-4">
+    <hr />
+    <input class="form-control mt-3" name="nama" placeholder="Nama Lengkap" />
+    <input class="form-control mt-3" name="alamat" placeholder="Alamat" />
+    <select class="form-control mt-3" name="kelamin">
+      <option value="-">Jenis Kelamin</option>
+      <option value="laki-laki">laki-laki</option>
+      <option value="perempuan">perempuan</option>
+    </select>
+    <input class="form-control mt-3" name="agama" placeholder="Agama" />
+    <input
+      class="form-control mt-3"
+      name="sekolah"
+      placeholder="Sekolah Asal"
+    />
+    <button type="submit" class="btn btn-primary mt-4">Simpan</button>
+  </form>
+</div>
+{% endblock %}

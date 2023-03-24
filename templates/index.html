@@ -1,0 +1,32 @@
+{% extends 'root.html' %} {% block title %} {{ context['title'] }} {% endblock
+%} {% block content %}
+<a href="/mahasiswa-baru" class="btn btn-primary">Tambahkan Mahasiswa</a>
+<table class="table mt-5">
+  <thead>
+    <tr>
+      <th>Nama</th>
+      <th>Alamat</th>
+      <th>Jenis Kelamin</th>
+      <th>Agama</th>
+      <th>Sekolah Asal</th>
+      <th>Aksi</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for user in context['data'] %}
+     
+        <tr>
+            <td>{{ user[1] }}</td>
+            <td>{{ user[2] }}</td>
+            <td>{{ user[3] }}</td>
+            <td>{{ user[4] }}</td>
+            <td>{{ user[5] }}</td>
+            <td>
+                <a href="/update?id={{user[0]}}" class="btn btn-sm btn-warning">edit</a>
+                <a href="/delete?id={{user[0]}}" class="btn btn-sm btn-danger">hapus</a>
+            </td>
+        </td>
+      {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
